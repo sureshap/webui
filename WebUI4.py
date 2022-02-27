@@ -10,4 +10,4 @@ if uploaded_file:
     df = pd.read_excel(uploaded_file)
     df_show = df.head(10)
     st.dataframe(df_show)
-    #st.table(df.head(10))
+    st.table(df_show)
