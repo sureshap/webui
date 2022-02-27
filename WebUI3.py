@@ -29,4 +29,4 @@ if st.checkbox('Show dataframe'):
        np.random.randn(20, 3),
        columns=['a', 'b', 'c'])
 
-	chart_data
+     chart_data
