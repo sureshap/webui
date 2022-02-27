@@ -11,7 +11,7 @@ DATA_URL = ('https://github.com/sureshap/webui/blob/main/input_data.xlsx')
 st.write('Hello')
 
 def load_data(nrows):
-    data = pd.read_excel(DATA_URL, nrows=nrows)
+    data = pd.read_excel(DATA_URL)
     #lowercase = lambda x: str(x).lower()
     #data.rename(lowercase, axis='columns', inplace=True)
     #data[DATE_COLUMN] = pd.to_datetime(data[DATE_COLUMN])
