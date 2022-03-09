@@ -2,7 +2,7 @@
 #Necessary imports
 import streamlit as st
 import pandas as pd
-from matplotlib import pyplot as plt
+import matplotlib.pyplot as plt
 from textblob import TextBlob
 from nltk.tokenize import sent_tokenize
 from gensim.summarization.summarizer import summarize 
