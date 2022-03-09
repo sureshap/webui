@@ -6,14 +6,7 @@ import numpy as np # linear algebra
 #import matplotlib.pyplot as plt # plotting graph for EDA , Metrics analysis
 
 from textblob import TextBlob
-from nltk.tokenize import sent_tokenize
-from gensim.summarization.summarizer import summarize 
-from gensim.summarization import keywords
-import spacy
-from spacy import displacy
 from collections import Counter
-import en_core_web_sm
-nlp = en_core_web_sm.load()
 
 
 #Headings for Web Application
@@ -38,53 +31,18 @@ def entRecognizer(entDict, typeEnt):
 
 #Sentiment Analysis
 if option == 'Sentiment Analysis':
-
-    #Creating graph for sentiment across each sentence in the text inputted
-    sents = sent_tokenize(text)
-    entireText = TextBlob(text)
-    sentScores = []
-    for sent in sents:
-        text = TextBlob(sent)
-        score = text.sentiment[0]
-        sentScores.append(score)
-
-    #Plotting sentiment scores per sentencein line graph
-    st.line_chart(sentScores)
-
-    #Polarity and Subjectivity of the entire text inputted
-    sentimentTotal = entireText.sentiment
     st.write("The sentiment of the overall text below.")
-    st.write(sentimentTotal)
+
 
 #Named Entity Recognition
 elif option == 'Entity Extraction':
 
-    #Getting Entity and type of Entity
-    entities = []
-    entityLabels = []
-    doc = nlp(text)
-    for ent in doc.ents:
-        entities.append(ent.text)
-        entityLabels.append(ent.label_)
-    entDict = dict(zip(entities, entityLabels)) #Creating dictionary with entity and entity types
-
-    #Using function to create lists of entities of each type
-    entOrg = entRecognizer(entDict, "ORG")
-    entCardinal = entRecognizer(entDict, "CARDINAL")
-    entPerson = entRecognizer(entDict, "PERSON")
-    entDate = entRecognizer(entDict, "DATE")
-    entGPE = entRecognizer(entDict, "GPE")
 
     #Displaying entities of each type
-    st.write("Organization Entities: " + str(entOrg))
-    st.write("Cardinal Entities: " + str(entCardinal))
-    st.write("Personal Entities: " + str(entPerson))
-    st.write("Date Entities: " + str(entDate))
-    st.write("GPE Entities: " + str(entGPE))
+    st.write("Entity Extraction")
+
 
 #Text Summarization
 else:
-    summWords = summarize(text)
     st.subheader("Summary")
-    st.write(summWords)
 
