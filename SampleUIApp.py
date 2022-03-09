@@ -85,4 +85,4 @@ else:
     summWords = summarize(text)
     st.subheader("Summary")
     st.write(summWords)
-view rawapp.py hosted with ❤ by GitHub
+
