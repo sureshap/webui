@@ -2,7 +2,10 @@
 #Necessary imports
 import streamlit as st
 import pandas as pd
-import matplotlib.pyplot as plt
+import numpy as np # linear algebra
+import matplotlib.pyplot as plt # plotting graph for EDA , Metrics analysis
+%matplotlib inline
+
 from textblob import TextBlob
 from nltk.tokenize import sent_tokenize
 from gensim.summarization.summarizer import summarize 
